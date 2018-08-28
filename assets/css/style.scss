@@ -8,7 +8,7 @@ nav h1 {
 }
 
 nav ul {
-    list-style: unset;
+    list-style: none;
     height: initial;
     padding: initial;
     background: initial;
@@ -22,7 +22,8 @@ nav li {
     float: initial;
     border-right: initial;
     height: initial;
-    border-left: 5px solid #267CB9;
+    border-left: 2px solid #267CB9;
+    padding-left: 4px;
 }
 
 nav li:first-child a {
@@ -48,4 +49,9 @@ footer {
     float: left;
     position: relative;
     bottom: -50px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #267CB9;
+    border-bottom: 1px solid rgba(210,210,210, 0.6);
 }
