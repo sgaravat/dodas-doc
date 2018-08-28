@@ -39,7 +39,8 @@
         {% endif %}
       </header>
       <nav>
-        {% include summary.md | markdownify %}
+        {% capture summary_include %}{% include summary.md %}{% endcapture %}
+        {{ summary_include | markdownify }}
       </nav>
       <section>
 
