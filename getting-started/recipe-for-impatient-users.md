@@ -70,9 +70,8 @@ outputs:
      value: { get_attribute: [ simple_node, endpoint, credential, 0 ] }
 ```
 
-{% hint style="info" %}
 If you will choose a specific template \(not just the test once\) you need to  properly configure it. Configuration parameters should be documented on each TOSCA template. 
-{% endhint %}
+
 
 ## 4\) Submit the TOSCA template
 
@@ -131,15 +130,12 @@ There are two steps:
     orchent depcreate <Your-TOSCA>.yaml '{}'
     ```
 
-{% hint style="info" %}
 the parenthesis  '{}' can be used to pass the input parameter to the TOSCA. Although values can be filled in the template itself, the parenthesis must be left there otherwise you'll get an error. 
-{% endhint %}
 
 * * The output of the deployment creation \(`depcreate`\) command will be something like the following   `Deployment [b8bdccf3-9be5-499f-aac2-664dc0726795]:   status: CREATE_IN_PROGRESS   creation time: 2018-06-16T15:58+0000   update time: 2018-06-16T15:58+0000   callback:    status reason:    task: NONE   CloudProviderName:    outputs:   {}    links:     self [https://orchestrator.cloud.cnaf.infn.it/orchestrator/deployments/b8bdccf3-9be5-499f-aac2-664dc0726795]     resources [https://orchestrator.cloud.cnaf.infn.it/orchestrator/deployments/b8bdccf3-9be5-499f-aac2-664dc0726795/resources]     template [https://orchestrator.cloud.cnaf.infn.it/orchestrator/deployments/b8bdccf3-9be5-499f-aac2-664dc0726795/template]`
 
 The above steps 1 to 3 are valid irrespective of which TOSCA template will be used. Templates available are HTCondor as batch system and Spark. Moreover there are Experiment specific customization, in particular [CMS](https://dodas.gitbook.io/dynamic-on-demand-analysis-service/~/edit/drafts/-LFIXHRxcNpQzkRZsUnA/getting-started/recipe-for-impatient-users) and [AMS](https://dodas.gitbook.io/dynamic-on-demand-analysis-service/~/edit/drafts/-LFIXHRxcNpQzkRZsUnA/getting-started/ams-recipe) recipes.
 
-{% hint style="info" %}
 User can test all the recipes running on the freely accessible DODAS [Enabling Facility](../the-enabling-facility.md).
-{% endhint %}
+
 
