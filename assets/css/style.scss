@@ -26,6 +26,7 @@ nav li {
 
 nav li:first-child a {
     border-radius: initial;
+    border-left: 5px solid #267CB9;
 }
 
 header ul li+li+li {
@@ -34,7 +35,7 @@ header ul li+li+li {
 }
 
 nav ul a {
-    line-height: initial;
+    line-height: unset;
     font-size: smaller;
     display: initial;
     text-align: initial;
