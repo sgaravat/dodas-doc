@@ -40,12 +40,10 @@ Docker image files are available [here](https://github.com/DODAS-TS).
 
 ## Launching a DODAS instance of HTCondor for CMS
 
-{% hint style="info" %}
 This assume you are now familiar with following steps:
 
 1. how to GET a token from IAM-DODAS
 2. how to submit a TOSCA template \(either with PaaS orchestrator or Infrastructure Manager\)
-{% endhint %}
 
 You can get the basic CMS TOSCA template from [here](https://github.com/indigo-dc/tosca-templates/blob/master/dodas/CMS-HTCondor-dodas.yaml) and submit it after a proper configuration. There input parameters to be set are explained below. THere are 3 sections and these are the mandatory parameters. For advanced usage there is more to be configured.   
 
