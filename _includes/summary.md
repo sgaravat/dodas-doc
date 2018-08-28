@@ -4,7 +4,7 @@
 * [Introduction](/dodas-doc/introduction)
 * [DODAS: How it is made](/dodas-doc/dodas-how-it-is-made)
 * [The Enabling Facility](/dodas-doc/the-enabling-facility)
-* [Getting Started](/dodas-doc/getting-started/)
+* [Getting Started](/dodas-doc/getting-started/index.html)
   * [Recipe for impatient users](/dodas-doc/getting-started/recipe-for-impatient-users)
   * [HTCondor AMS Recipe](/dodas-doc/getting-started/ams-recipe)
   * [HTCondor CMS Recipe](/dodas-doc/getting-started/cms-recipe)
