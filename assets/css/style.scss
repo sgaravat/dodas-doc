@@ -8,7 +8,7 @@ nav h1 {
 }
 
 nav ul {
-    list-style: initial;
+    list-style: unset;
     height: initial;
     padding: initial;
     background: initial;
@@ -22,11 +22,11 @@ nav li {
     float: initial;
     border-right: initial;
     height: initial;
+    border-left: 5px solid #267CB9;
 }
 
 nav li:first-child a {
     border-radius: initial;
-    border-left: 5px solid #267CB9;
 }
 
 header ul li+li+li {
@@ -35,7 +35,7 @@ header ul li+li+li {
 }
 
 nav ul a {
-    line-height: unset;
+    line-height: initial;
     font-size: smaller;
     display: initial;
     text-align: initial;
