@@ -8,6 +8,7 @@
   * [Recipe for impatient users](/dodas-doc/getting-started/recipe-for-impatient-users)
   * [HTCondor AMS Recipe](/dodas-doc/getting-started/ams-recipe)
   * [HTCondor CMS Recipe](/dodas-doc/getting-started/cms-recipe)
+  * [BigData Platform](/dodas-doc/getting-started/bigdata-recipe)
 * [Monitoring](/dodas-doc/monitoring)
 * [Using DODAS with external providers](/dodas-doc/using-dodas-with-external-providers/)
   * [How to use private IaaS with DODAS-PaaS](/dodas-doc/using-dodas-with-external-providers/how-to-use-your-own-cloud)
