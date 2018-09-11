@@ -78,8 +78,8 @@ conf = SparkConf().setAppName("PiCalc")
 # Executor parameters
 conf.set('spark.executor.memory', '512m')
 conf.set('spark.executor.cores', '1')
-conf.set('spark.executor.cores.max', '4')
-conf.set('spark.cores.max', '4')
+conf.set('spark.executor.cores.max', '2')
+conf.set('spark.cores.max', '2')
 # the default docker image to use as worker node
 conf.set('spark.mesos.executor.docker.image', 'dodasts/mesos-spark:base')
 
