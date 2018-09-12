@@ -65,6 +65,7 @@ ssh admin@your_lb_ip -p 31042
 Now you can create an example program, like the following one written in python:
 
 ```python
+#!/usr/bin/env python
 #! -*- coding: utf-8 -*-
 from __future__ import print_function
 
@@ -115,3 +116,49 @@ spark-run test_pi.py
 
 
 > You will be asked to insert your sudo password to start the application because to run Spark Tasks you have to be a sudo user
+
+### Sort example
+
+In this example we sort an array of tuples. You can execute the application with the command `spark-run`.
+
+```python
+#!/usr/bin/env python
+#! -*- coding: utf-8 -*-
+from __future__ import print_function
+
+from pyspark.sql import SparkSession
+from pyspark import SparkConf, SparkContext
+    
+# Configure your application
+conf = SparkConf().setAppName("PythonSort")
+# Executor parameters
+conf.set('spark.executor.memory', '512m')
+conf.set('spark.executor.cores', '1')
+conf.set('spark.executor.cores.max', '1')
+conf.set('spark.cores.max', '2')
+
+# the default docker image to use as worker node
+conf.set('spark.mesos.executor.docker.image', 'dodasts/mesos-spark:base')
+
+# Spark Context
+sc = SparkContext(conf=conf)
+
+spark = SparkSession(sc).builder.getOrCreate()
+
+data = sc.parallelize([
+    ('Amber', 22), ('Alfred', '23'), ('Skye',4), ('Albert', '12'), ('Amber', 9)
+])
+
+# Convert all ages to int and then sort tuples by ages
+sortedCount = data.map(
+        lambda elm: ( elm[0], int(elm[1]) )
+    ).sortBy(
+    lambda elm: elm[1])
+
+output = sortedCount.collect()
+for (name, age) in output:
+    print(name, age)
+
+spark.stop()
+
+```
