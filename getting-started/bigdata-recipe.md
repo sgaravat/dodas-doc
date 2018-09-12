@@ -162,3 +162,48 @@ for (name, age) in output:
 spark.stop()
 
 ```
+
+### Word count example
+
+```python
+from __future__ import print_function
+
+import sys
+from operator import add
+
+from pyspark.sql import SparkSession
+from pyspark import SparkConf, SparkContext
+
+# Configure your application
+conf = SparkConf().setAppName("PythonWordCount")
+# Executor parameters
+conf.set('spark.executor.memory', '512m')
+conf.set('spark.executor.cores', '1')
+conf.set('spark.executor.cores.max', '1')
+conf.set('spark.cores.max', '2')
+
+# the default docker image to use as worker node
+conf.set('spark.mesos.executor.docker.image', 'dodasts/mesos-spark:base')
+
+# Spark Context
+sc = SparkContext(conf=conf)
+
+spark = SparkSession(sc).builder.getOrCreate()
+
+with open("ipsum.txt") as text_file:
+    lines = sc.parallelize(text_file.readlines())
+
+counts = lines.flatMap(lambda x: x.split(' ')).map(lambda x: (x, 1)).reduceByKey(add)
+output = counts.sortBy(lambda elm: elm[1]).collect()
+for (word, count) in output:
+    print("%s: %i" % (word, count))
+
+spark.stop()
+
+```
+
+To test this example use the following command:
+
+```bash
+spark-run --conf spark.mesos.uris=http://websitetips.com/articles/copy/lorem/ipsum.txt test_word_count.py
+```
