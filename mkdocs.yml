@@ -1,0 +1,6 @@
+site_name: Dynamic On Demand Analysis Service
+theme:
+  name: material
+  palette:
+    primary: 'Deep Blue'
+    accent: 'Orange'
